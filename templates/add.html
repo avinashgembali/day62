@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+<!--Don't forget your import here-->
+{% from 'bootstrap5/form.html' import render_form %}
+{% block title %}Add A New Cafe{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8">
+
+      <h1>Add a new cafe into the database</h1>
+
+      {{ render_form(form, novalidate=True) }}
+
+	  <p class="space-above"><a href="{{ url_for('cafes') }}">See all cafes</a></p>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+<!--&lt;!&ndash; This is where your WTForm will go &ndash;&gt;-->
+<!--      <form action="{{ url_for('add_cafe') }}" method="POST" novalidate>-->
+<!--        {{ form.csrf_token }}-->
+<!--        <p>-->
+<!--          {{ form.cafe.label }} <br> {{ form.cafe(size = 50) }}-->
+<!--          {% for err in form.cafe.errors %}-->
+<!--            <span style="color : red">{{ err }}</span>-->
+<!--          {% endfor %}-->
+<!--        </p>-->
+<!--        <p>-->
+<!--          {{ form.location.label }} <br> {{ form.location(size = 50) }}-->
+<!--          {% for err in form.location.errors %}-->
+<!--            <span style="color : red">{{ err }}</span>-->
+<!--          {% endfor %}-->
+<!--        </p>-->
+<!--        <p>-->
+<!--          {{ form.open.label }} <br> {{ form.open(size = 50) }}-->
+<!--          {% for err in form.open.errors %}-->
+<!--          {% endfor %}-->
+<!--        </p>-->
+<!--        <p>-->
+<!--          {{ form.close.label }} <br> {{ form.close(size = 50) }}-->
+<!--          {% for err in form.close.errors %}-->
+<!--          {% endfor %}-->
+<!--        </p>-->
+<!--        <p>-->
+<!--          {{ form.coffee.label }} <br> {{ form.coffee(size = 50) }}-->
+<!--          {% for err in form.coffee.errors %}-->
+<!--            <span style="color : red">{{ err }}</span>-->
+<!--          {% endfor %}-->
+<!--        </p>-->
+<!--        <p>-->
+<!--          {{ form.wifi.label }} <br> {{ form.wifi(size = 50) }}-->
+<!--          {% for err in form.wifi.errors %}-->
+<!--            <span style="color : red">{{ err }}</span>-->
+<!--          {% endfor %}-->
+<!--        </p>-->
+<!--        <p>-->
+<!--          {{ form.power.label }} <br> {{ form.power(size = 50) }}-->
+<!--          {% for err in form.power.errors %}-->
+<!--            <span style="color : red">{{ err }}</span>-->
+<!--          {% endfor %}-->
+<!--        </p>-->
+<!--        {{ form.submit }}-->
+<!--      </form>-->
